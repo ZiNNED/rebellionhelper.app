@@ -173,7 +173,6 @@ var REBELLION =
         $(document).on("keyup", function (e)
         {
             var key = e.keyCode || e.which || e.charCode || e.key;
-            console.log(key);
             switch (key)
             {
                 case 66: // b
