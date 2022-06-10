@@ -1,0 +1,22 @@
+{
+  "short_name": "Rebellion",
+  "name": "Rebellion Map",
+  "description": "Toggle each system between Imperial Subjugation, Imperial Loyalty and Rebel Loyalty. Show the current build queue for both players. Toggle Probe Tracking View to track all send probes!",
+  "icons": [
+    {
+      "src": "images/droid.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "/images/droid-icon.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    }
+  ],
+  "start_url": "index.html",
+  "background_color": "#020612",
+  "theme_color": "#000",
+  "display": "standalone",
+  "orientation": "landscape"
+}
