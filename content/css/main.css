@@ -8,7 +8,10 @@
 /* zero the margins */
 body {
   margin: 0;
-  background-color: #020612;
+  background-image: -webkit-radial-gradient(circle farthest-corner at 50% 100%, rgba(187, 82, 0, 0.5), rgba(0, 46, 143, 0.5)), url("/content/images/hyades.jpg");
+  background-image: radial-gradient(circle farthest-corner at 50% 100%, rgba(187, 82, 0, 0.5), rgba(0, 46, 143, 0.5)), url("/content/images/hyades.jpg");
+  background-position: 0px 0px, 50% 50%;
+  background-size: auto, 1000px;
 }
 body > div,
 body > div * {
@@ -47,10 +50,6 @@ body footer a {
   color: #fff;
   text-decoration: none;
 }
-body footer a:hover {
-  color: rgba(30, 144, 255, 0.6);
-  text-decoration: underline;
-}
 #flippable {
   transition: transform ease 1s;
 }
@@ -87,10 +86,6 @@ body footer a:hover {
   -webkit-align-items: stretch;
   -ms-flex-align: stretch;
   align-items: stretch;
-  background-image: -webkit-radial-gradient(circle farthest-corner at 50% 100%, rgba(187, 82, 0, 0.5), rgba(0, 46, 143, 0.5)), url("/content/images/hyades.jpg");
-  background-image: radial-gradient(circle farthest-corner at 50% 100%, rgba(187, 82, 0, 0.5), rgba(0, 46, 143, 0.5)), url("/content/images/hyades.jpg");
-  background-position: 0px 0px, 50% 50%;
-  background-size: auto, 1000px;
 }
 .space:not(.droid) .remote {
   cursor: not-allowed;
@@ -267,25 +262,6 @@ svg:not(:root) {
 .positions.right {
   right: 1em;
 }
-.button {
-  cursor: pointer;
-}
-.button.resetmap:hover,
-.button.hotkeys:hover {
-  background-color: rgba(0, 153, 153, 0.6);
-}
-.button.buildqueue:hover {
-  background-color: rgba(185, 96, 0, 0.6);
-}
-.button.about:hover {
-  background-color: rgba(30, 144, 255, 0.6);
-}
-.button.donate:hover {
-  background-color: goldenrod;
-}
-.button.close:hover {
-  background-color: #bf0000;
-}
 .heading-2 {
   position: absolute;
   left: 0px;
@@ -326,11 +302,9 @@ svg:not(:root) {
 #bq-all #bq-factions #tabs .button#show-rebels {
   margin-right: 1em;
 }
-#bq-all #bq-factions #tabs .button#show-rebels:hover,
 #bq-all #bq-factions #tabs .button#show-rebels.active {
   background-color: rgba(0, 153, 153, 0.6);
 }
-#bq-all #bq-factions #tabs .button#show-empire:hover,
 #bq-all #bq-factions #tabs .button#show-empire.active {
   background-color: #bf0000;
 }
@@ -627,16 +601,6 @@ svg:not(:root) {
   stroke: #fff;
   stroke-width: 5;
 }
-#show-rebels-bq,
-#show-empire-bq,
-#show-buildqueue {
-  cursor: pointer;
-}
-#show-rebels-bq:hover,
-#show-empire-bq:hover,
-#show-buildqueue:hover {
-  opacity: 0.5;
-}
 #rebelbase {
   stroke: #b8ccc7;
   stroke-width: 8;
@@ -657,25 +621,11 @@ hr {
   min-width: 75px;
   width: 10vw;
 }
-.space .mainbutton:not(.active):hover .cls-9 {
-  fill: #b96000;
-  opacity: 0.6;
-}
-.space .mainbutton:not(.active):hover .cls-56 {
-  opacity: 0.2;
-}
 .space .mainbutton.active .cls-9 {
   fill: #b96000;
   opacity: 0.6;
 }
 .space .mainbutton.active .cls-56 {
-  opacity: 0.2;
-}
-.space .mainbutton#droidbutton:not(.active):hover .cls-9 {
-  fill: #006400;
-  opacity: 0.6;
-}
-.space .mainbutton#droidbutton:not(.active):hover .cls-56 {
   opacity: 0.2;
 }
 .space .mainbutton#droidbutton.active .cls-9 {
@@ -738,10 +688,6 @@ hr {
 .space.droid #Buttons .system.bq-droid.bq-impsub .droid {
   opacity: 0;
 }
-.space.droid #Buttons .system:not(.bq-droid, .bq-boots, .bq-impsub, .bq-imploy):hover .background {
-  fill: #e6e6e6;
-  opacity: 0.25;
-}
 .space:not(.droid) #Buttons .system.bq-impsub .background {
   fill: #b96000;
   opacity: 0.6;
@@ -765,10 +711,6 @@ hr {
 }
 .space:not(.droid) #Buttons .system.bq-disallowed .stop {
   opacity: 1;
-}
-.space:not(.droid) #Buttons .system:not(.bq-impsub, .bq-imploy, .bq-rebel, .bq-disallowed, .remote):hover .background {
-  fill: #e6e6e6;
-  opacity: 0.25;
 }
 .space #options .icon {
   opacity: 0;
@@ -824,5 +766,68 @@ hr {
 @media screen and (orientation: landscape) {
   .hide-on-mobile {
     display: none !important;
+  }
+}
+@media (hover: hover) {
+  body footer a:hover {
+    color: rgba(30, 144, 255, 0.6);
+    text-decoration: underline;
+  }
+  .button {
+    cursor: pointer;
+  }
+  .button.resetmap:hover,
+  .button.hotkeys:hover {
+    background-color: rgba(0, 153, 153, 0.6);
+  }
+  .button.buildqueue:hover {
+    background-color: rgba(185, 96, 0, 0.6);
+  }
+  .button.about:hover {
+    background-color: rgba(30, 144, 255, 0.6);
+  }
+  .button.donate:hover {
+    background-color: goldenrod;
+  }
+  .button.close:hover {
+    background-color: #bf0000;
+  }
+  #bq-all #bq-factions #tabs .button#show-rebels:hover {
+    background-color: rgba(0, 153, 153, 0.6);
+  }
+  #bq-all #bq-factions #tabs .button#show-empire:hover {
+    background-color: #bf0000;
+  }
+  #show-rebels-bq,
+  #show-empire-bq,
+  #show-buildqueue {
+    cursor: pointer;
+  }
+  #show-rebels-bq:hover,
+  #show-empire-bq:hover,
+  #show-buildqueue:hover {
+    opacity: 0.5;
+  }
+  .space .mainbutton:not(.active):hover .cls-9 {
+    fill: #b96000;
+    opacity: 0.6;
+  }
+  .space .mainbutton:not(.active):hover .cls-56 {
+    opacity: 0.2;
+  }
+  .space .mainbutton#droidbutton:not(.active):hover .cls-9 {
+    fill: #006400;
+    opacity: 0.6;
+  }
+  .space .mainbutton#droidbutton:not(.active):hover .cls-56 {
+    opacity: 0.2;
+  }
+  .space.droid #Buttons .system:not(.bq-droid, .bq-boots, .bq-impsub, .bq-imploy):hover .background {
+    fill: #e6e6e6;
+    opacity: 0.25;
+  }
+  .space:not(.droid) #Buttons .system:not(.bq-impsub, .bq-imploy, .bq-rebel, .bq-disallowed, .remote):hover .background {
+    fill: #e6e6e6;
+    opacity: 0.25;
   }
 }

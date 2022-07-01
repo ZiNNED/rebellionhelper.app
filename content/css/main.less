@@ -5,8 +5,12 @@
 body
 {
 	margin: 0;
-	background-color: #020612;
-
+	// background-color: #020612;
+	background-image: -webkit-radial-gradient(circle farthest-corner at 50% 100%, rgba(187, 82, 0, .5), rgba(0, 46, 143, .5)), url("/content/images/hyades.jpg");
+	background-image: radial-gradient(circle farthest-corner at 50% 100%, rgba(187, 82, 0, .5), rgba(0, 46, 143, .5)), url("/content/images/hyades.jpg");
+	background-position: 0px 0px, 50% 50%;
+	background-size: auto, 1000px;
+	
 	> div,
 	> div *
 	{
@@ -43,12 +47,6 @@ body
 			font-size: 20px;
 			color: @white;
 			text-decoration: none;
-
-			&:hover
-			{
-				color: @blue;
-				text-decoration: underline;
-			}
 		}
 	}
 }
@@ -101,10 +99,6 @@ body
 	-webkit-align-items: stretch;
 	-ms-flex-align: stretch;
 	align-items: stretch;
-	background-image: -webkit-radial-gradient(circle farthest-corner at 50% 100%, rgba(187, 82, 0, .5), rgba(0, 46, 143, .5)), url("/content/images/hyades.jpg");
-	background-image: radial-gradient(circle farthest-corner at 50% 100%, rgba(187, 82, 0, .5), rgba(0, 46, 143, .5)), url("/content/images/hyades.jpg");
-	background-position: 0px 0px, 50% 50%;
-	background-size: auto, 1000px;
 
 	&:not(.droid)
 	{
@@ -338,52 +332,6 @@ svg:not(:root)
 	}
 }
 
-.button
-{
-	cursor: pointer;
-
-	&.resetmap,
-	&.hotkeys
-	{
-		&:hover
-		{
-			background-color: @green;
-		}
-	}
-
-	&.buildqueue
-	{
-		&:hover
-		{
-			background-color: @brown;
-		}
-	}
-
-	&.about
-	{
-		&:hover
-		{
-			background-color: @blue;
-		}
-	}
-
-	&.donate
-	{
-		&:hover
-		{
-			background-color: @gold;
-		}
-	}
-
-	&.close
-	{
-		&:hover
-		{
-			background-color: @red;
-		}
-	}
-}
-
 .heading-2
 {
 	position: absolute;
@@ -438,7 +386,6 @@ svg:not(:root)
 				{
 					margin-right: 1em;
 
-					&:hover,
 					&.active
 					{
 						background-color: @green;
@@ -447,7 +394,6 @@ svg:not(:root)
 
 				&#show-empire
 				{
-					&:hover,
 					&.active
 					{
 						background-color: @red;
@@ -845,18 +791,6 @@ svg:not(:root)
 	}
 }
 
-#show-rebels-bq,
-#show-empire-bq,
-#show-buildqueue
-{
-	cursor: pointer;
-
-	&:hover
-	{
-		opacity: .5;
-	}
-}
-
 #rebelbase
 {
 	stroke: @border;
@@ -889,23 +823,6 @@ hr
 {
 	.mainbutton
 	{
-		&:not(.active)
-		{
-			&:hover
-			{
-				.cls-9
-				{
-					fill: @bgsub;
-					opacity: .6;
-				}
-
-				.cls-56
-				{
-					opacity: .2;
-				}
-			}
-		}
-
 		&.active
 		{
 			.cls-9
@@ -922,23 +839,6 @@ hr
 
 		&#droidbutton
 		{
-			&:not(.active)
-			{
-				&:hover
-				{
-					.cls-9
-					{
-						fill: @bgdroid;
-						opacity: .6;
-					}
-
-					.cls-56
-					{
-						opacity: .2;
-					}
-				}
-			}
-
 			&.active
 			{
 				.cls-9
@@ -1076,18 +976,6 @@ hr
 						}
 					}
 				}
-
-				&:not(.bq-droid, .bq-boots, .bq-impsub, .bq-imploy)
-				{
-					&:hover
-					{
-						.background
-						{
-							fill: @bggrey;
-							opacity: .25;
-						}
-					}
-				}
 			}
 		}
 	}
@@ -1154,18 +1042,6 @@ hr
 					.stop
 					{
 						opacity: 1;
-					}
-				}
-
-				&:not(.bq-impsub, .bq-imploy, .bq-rebel, .bq-disallowed, .remote)
-				{
-					&:hover
-					{
-						.background
-						{
-							fill: @bggrey;
-							opacity: .25;
-						}
 					}
 				}
 			}
@@ -1311,5 +1187,194 @@ hr
 	.hide-on-mobile
 	{
 		display: none !important;
+	}
+}
+
+@media (hover: hover)
+{
+	body
+	{
+		footer
+		{
+			a
+			{
+				&:hover
+				{
+					color: @blue;
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
+	.button
+	{
+		cursor: pointer;
+
+		&.resetmap,
+		&.hotkeys
+		{
+			&:hover
+			{
+				background-color: @green;
+			}
+		}
+
+		&.buildqueue
+		{
+			&:hover
+			{
+				background-color: @brown;
+			}
+		}
+
+		&.about
+		{
+			&:hover
+			{
+				background-color: @blue;
+			}
+		}
+
+		&.donate
+		{
+			&:hover
+			{
+				background-color: @gold;
+			}
+		}
+
+		&.close
+		{
+			&:hover
+			{
+				background-color: @red;
+			}
+		}
+	}
+
+	#bq-all
+	{
+		#bq-factions
+		{
+			#tabs
+			{
+				.button
+				{
+					&#show-rebels
+					{
+						&:hover
+						{
+							background-color: @green;
+						}
+					}
+
+					&#show-empire
+					{
+						&:hover
+						{
+							background-color: @red;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	#show-rebels-bq,
+	#show-empire-bq,
+	#show-buildqueue
+	{
+		cursor: pointer;
+
+		&:hover
+		{
+			opacity: .5;
+		}
+	}
+
+	.space
+	{
+		.mainbutton
+		{
+			&:not(.active)
+			{
+				&:hover
+				{
+					.cls-9
+					{
+						fill: @bgsub;
+						opacity: .6;
+					}
+
+					.cls-56
+					{
+						opacity: .2;
+					}
+				}
+			}
+
+			&#droidbutton
+			{
+				&:not(.active)
+				{
+					&:hover
+					{
+						.cls-9
+						{
+							fill: @bgdroid;
+							opacity: .6;
+						}
+
+						.cls-56
+						{
+							opacity: .2;
+						}
+					}
+				}
+			}
+		}
+
+		&.droid
+		{
+			#Buttons
+			{
+				.system
+				{
+					&:not(.bq-droid, .bq-boots, .bq-impsub, .bq-imploy)
+					{
+						&:hover
+						{
+							.background
+							{
+								fill: @bggrey;
+								opacity: .25;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&:not(.droid)
+		{
+			#Buttons
+			{
+				.system
+				{
+					&:not(.bq-impsub, .bq-imploy, .bq-rebel, .bq-disallowed, .remote)
+					{
+						&:hover
+						{
+							.background
+							{
+								fill: @bggrey;
+								opacity: .25;
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
