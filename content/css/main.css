@@ -498,7 +498,6 @@ svg:not(:root) {
   cursor: pointer;
 }
 #aboutmenu,
-#redirectmenu,
 #hotkeysmenu,
 #optionsmenu,
 #continue,
@@ -507,7 +506,6 @@ svg:not(:root) {
   color: #fff;
 }
 #aboutmenu .info,
-#redirectmenu .info,
 #hotkeysmenu .info,
 #optionsmenu .info,
 #continue .info,
@@ -519,7 +517,6 @@ svg:not(:root) {
   margin-bottom: 1em;
 }
 #aboutmenu .info *,
-#redirectmenu .info *,
 #hotkeysmenu .info *,
 #optionsmenu .info *,
 #continue .info *,
@@ -528,7 +525,6 @@ svg:not(:root) {
   font-size: 16.8px;
 }
 #aboutmenu .info ul,
-#redirectmenu .info ul,
 #hotkeysmenu .info ul,
 #optionsmenu .info ul,
 #continue .info ul,
@@ -538,7 +534,6 @@ svg:not(:root) {
   padding: 0;
 }
 #aboutmenu .info ul li:not(.no-first-letter):first-letter,
-#redirectmenu .info ul li:not(.no-first-letter):first-letter,
 #hotkeysmenu .info ul li:not(.no-first-letter):first-letter,
 #optionsmenu .info ul li:not(.no-first-letter):first-letter,
 #continue .info ul li:not(.no-first-letter):first-letter,
@@ -547,7 +542,6 @@ svg:not(:root) {
   color: #fc6;
 }
 #aboutmenu .info a,
-#redirectmenu .info a,
 #hotkeysmenu .info a,
 #optionsmenu .info a,
 #continue .info a,
@@ -556,7 +550,6 @@ svg:not(:root) {
   color: #fc6;
 }
 #aboutmenu .info a:visited,
-#redirectmenu .info a:visited,
 #hotkeysmenu .info a:visited,
 #optionsmenu .info a:visited,
 #continue .info a:visited,
@@ -565,7 +558,6 @@ svg:not(:root) {
   color: #fc6;
 }
 #aboutmenu .info img,
-#redirectmenu .info img,
 #hotkeysmenu .info img,
 #optionsmenu .info img,
 #continue .info img,
