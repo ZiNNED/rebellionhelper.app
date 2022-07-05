@@ -1,5 +1,6 @@
 $(document).ready(function ()
 {
+    console.log("WTF MAN");
     PRESETUP.Execute();
     LIGHTSABER.Setup();
 
@@ -32,9 +33,17 @@ var PRESETUP =
     {
         var _this = this;
 
+        _this.CheckRedirect();
         _this.LoadOptions();
         _this.SetupConfirm();
         _this.SetupPrevious();
+    },
+
+    CheckRedirect: function()
+    {
+        console.log(TOOLS.GetUrlVars()["redirect"]);
+        if (TOOLS.GetUrlVars()["redirect"] === "true")
+            REBELLION.OpenMenu($("#redirectmenu"));
     },
 
     LoadOptions: function ()
@@ -148,6 +157,7 @@ var REBELLION =
         $("#closedonatemenu").css("opacity", 1).on("click", function () { _this.CloseMenu($("#donatemenu")); });
         $("#closehotkeysmenu").css("opacity", 1).on("click", function () { _this.CloseMenu($("#hotkeysmenu")); });
         $("#closeoptionsmenu").css("opacity", 1).on("click", function () { _this.CloseMenu($("#optionsmenu")); });
+        $("#closeredirectmenu").css("opacity", 1).on("click", function() { _this.CloseMenu($("#redirectmenu"))});
 
         svg.select("#mainmenu").click(function () { _this.OpenMenu($("#mainmenu")); });
         svg.select("#buildqueuebutton").click(function () { _this.SetBQ(); _this.OpenMenu($("#bqmenu")); });
@@ -678,4 +688,20 @@ var LIGHTSABER =
     {
         new Audio("/content/misc/lightsaber-off.mp3").play();
 	}
+};
+
+var TOOLS =
+{
+    GetUrlVars: function()
+    {
+        var vars = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        for(var i = 0; i < hashes.length; i++)
+        {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
+    }
 };

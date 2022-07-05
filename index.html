@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
-  <title>Star Wars: Rebellion | Helper Map</title>
+  <title>Star Wars: RebellionHelper</title>
   <meta
     content="Helper map for the popular board game Star Wars: Rebellion. Use this map to toggle each system between Imperial Subjugation, Imperial Loyalty and Rebel Loyalty. Show the current build queue for both players. Toggle Probe Tracking View to track all send probes!"
     name="description">
@@ -14,7 +14,7 @@
   <link rel="manifest" href="manifest.json">
   <link href="content/images/favicon.png" rel="shortcut icon" type="image/x-icon">
   <link href="content/images/favicon_big.png" rel="apple-touch-icon">
-  <link rel="stylesheet" href="content/css/main.min.css">
+  <link rel="stylesheet" href="content/css/main.css">
   <link rel="stylesheet" href="content/css/lightsaber.min.css">
   <link rel="stylesheet" href="content/css/svg.css">
 </head>
@@ -53,6 +53,24 @@
           <div id="donate" class="button donate no-margin" style="opacity: 1;">Donate</div>
           <hr />
           <div id="closemainmenu" class="button close no-margin" style="opacity: 1;">Close</div>
+        </div>
+      </div>
+    </div>
+    <div id="redirectmenu" class="mask" style="opacity: 0; visibility: hidden;">
+      <div class="w-clearfix">
+        <div class="menu">
+          <div class="info">
+            <span class="highlight">Important note!</span>
+          </div>
+          <div class="info">
+            You arrived here via a redirect on <span class="highlight">https://www.rebellionbq.com</span>. This site will no longer
+            be available per February 13th 2023.
+          </div>
+          <div class="info">
+            If you got here by a bookmark, please update it to this site.
+          </div>
+          <hr />
+          <div id="closeredirectmenu" class="button close no-margin" style="opacity: 1;">OK</div>
         </div>
       </div>
     </div>
@@ -404,11 +422,9 @@
       <div class="w-clearfix">
         <div class="menu">
           <div class="info">
-            Inspired by the awesome <a href="https://rebellionmap.com" target="_blank">RebellionMap</a> and with
-            permission of its creator <a href="https://boardgamegeek.com/user/Greg443" target="_blank">Greg443</a>, I
-            created this Star Wars: Rebellion Helper Map tool in which you can track loyalty of both the Empire and Rebel player.
-            With one push of a button you can see what each player has to put in his or her build queue. The Empire player can also
-            use this map to track his sent Probe Droids.
+            Welcome to RebellionHelper! You can use this tool to track loyalty of both the Empire and Rebel player and, as Empire
+            player, you can use it to track your sent Probe Droids as well. With one push of a button you can see what each player 
+            has to put in his or her build queue.
           </div>
           <div class="info">
             Use the left mouse button, or short tap on touch devices, to toggle between <span
@@ -6522,7 +6538,7 @@
     });
   </script>
   <script src="content/js/modernizr.min.js"></script>
-  <script src="content/js/rebellion.min.js"></script>
+  <script src="content/js/rebellion.js"></script>
   <script>
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker
