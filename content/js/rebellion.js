@@ -32,9 +32,23 @@ var PRESETUP =
     {
         var _this = this;
 
+        _this.SetupKofi();
         _this.LoadOptions();
         _this.SetupConfirm();
         _this.SetupPrevious();
+    },
+
+    SetupKofi: function()
+    {
+        if (!OPTIONS.IsMobile())
+        {
+            kofiWidgetOverlay.draw('zinned', {
+                'type': 'floating-chat',
+                'floating-chat.donateButton.text': 'Support me',
+                'floating-chat.donateButton.background-color': '#fcbf47',
+                'floating-chat.donateButton.text-color': '#323842'
+              });
+        }
     },
 
     LoadOptions: function ()
