@@ -32,24 +32,24 @@ var PRESETUP =
     {
         var _this = this;
 
-        _this.SetupKofi();
+        //_this.SetupKofi();
         _this.LoadOptions();
         _this.SetupConfirm();
         _this.SetupPrevious();
     },
 
-    SetupKofi: function()
-    {
-        if (!OPTIONS.IsMobile())
-        {
-            kofiWidgetOverlay.draw('zinned', {
-                'type': 'floating-chat',
-                'floating-chat.donateButton.text': 'Support me',
-                'floating-chat.donateButton.background-color': '#fcbf47',
-                'floating-chat.donateButton.text-color': '#323842'
-              });
-        }
-    },
+    //SetupKofi: function()
+    //{
+    //    if (!OPTIONS.IsMobile())
+    //    {
+    //        kofiWidgetOverlay.draw('zinned', {
+    //            'type': 'floating-chat',
+    //            'floating-chat.donateButton.text': 'Support me',
+    //            'floating-chat.donateButton.background-color': '#fcbf47',
+    //            'floating-chat.donateButton.text-color': '#323842'
+    //          });
+    //    }
+    //},
 
     LoadOptions: function ()
     {
@@ -153,13 +153,13 @@ var REBELLION =
         $("#buildqueue").css("opacity", 1).on("click", function () { _this.SetBQ(); _this.OpenMenu($("#bqmenu")); });
         $("#options").css("opacity", 1).on("click", function () { _this.OpenMenu($("#optionsmenu")); });
         $("#about").css("opacity", 1).on("click", function () { _this.OpenMenu($("#aboutmenu")); });
-        $("#donate").css("opacity", 1).on("click", function () { _this.OpenMenu($("#donatemenu")); });
+        //$("#donate").css("opacity", 1).on("click", function () { _this.OpenMenu($("#donatemenu")); });
         $("#hotkeys").css("opacity", 1).on("click", function () { _this.OpenMenu($("#hotkeysmenu")); });
 
         $("#closemainmenu").css("opacity", 1).on("click", function () { _this.CloseMenu($("#mainmenu")); });
         $("#closebqmenu").css("opacity", 1).on("click", function () { _this.CloseMenu($("#bqmenu")); });
         $("#closeaboutmenu").css("opacity", 1).on("click", function () { _this.CloseMenu($("#aboutmenu")); });
-        $("#closedonatemenu").css("opacity", 1).on("click", function () { _this.CloseMenu($("#donatemenu")); });
+        //$("#closedonatemenu").css("opacity", 1).on("click", function () { _this.CloseMenu($("#donatemenu")); });
         $("#closehotkeysmenu").css("opacity", 1).on("click", function () { _this.CloseMenu($("#hotkeysmenu")); });
         $("#closeoptionsmenu").css("opacity", 1).on("click", function () { _this.CloseMenu($("#optionsmenu")); });
 
@@ -203,9 +203,9 @@ var REBELLION =
                 case 65: // a
                     _this.OpenMenu($("#aboutmenu"));
                     break;
-                case 68: // d
-                    _this.OpenMenu($("#donatemenu"));
-                    break;
+                //case 68: // d
+                //    _this.OpenMenu($("#donatemenu"));
+                //    break;
                 case 72: // h
                     _this.OpenMenu($("#hotkeysmenu"));
                     break;
@@ -490,7 +490,7 @@ var REBELLION =
         _this.CloseMenu($("#mainmenu"));
         _this.CloseMenu($("#bqmenu"));
         _this.CloseMenu($("#aboutmenu"));
-        _this.CloseMenu($("#donatemenu"));
+        //_this.CloseMenu($("#donatemenu"));
         _this.CloseMenu($("#hotkeysmenu"));
         _this.CloseMenu($("#confirmreset"));
         _this.CloseMenu($("#optionsmenu"));
