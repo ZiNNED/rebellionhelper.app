@@ -1,6 +1,6 @@
 {
-  "short_name": "Rebellion",
-  "name": "Rebellion Map",
+  "short_name": "RebellionH",
+  "name": "Rebellion Helper",
   "description": "Toggle each system between Imperial Subjugation, Imperial Loyalty and Rebel Loyalty. Show the current build queue for both players. Toggle Probe Tracking View to track all send probes!",
   "icons": [
     {
