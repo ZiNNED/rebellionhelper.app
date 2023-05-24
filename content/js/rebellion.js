@@ -26,6 +26,7 @@ var PRESETUP =
 {
     STORAGE_KEY: "SWRBQ",
     STORAGE_KEY_OPTIONS: "SWRBQO",
+    STORAGE_KEY_CUSTOMIZATION: "SWRBQC",
     PROMPT_CONTINUE: true,
 
     Execute: function ()
@@ -34,6 +35,8 @@ var PRESETUP =
 
         _this.SetupKofi();
         _this.LoadOptions();
+        _this.LoadCustomization();
+        _this.SetupCustomization();
         _this.SetupConfirm();
         _this.SetupPrevious();
     },
@@ -67,7 +70,41 @@ var PRESETUP =
             $("#override").prop("checked", xoptions.override);
             $("#promptc").prop("checked", xoptions.continue);
         }
-	},
+    },
+
+    LoadCustomization: function ()
+    {
+        var options = localStorage.getItem(PRESETUP.STORAGE_KEY_CUSTOMIZATION);
+        if (options !== null)
+        {
+            var xoptions = JSON.parse(options);
+            for (var key in xoptions)
+            {
+                document.documentElement.style.setProperty("--" + key, xoptions[key]);
+            }
+        }
+        else // create default options
+            this.SetDefaultCustomization();
+    },
+
+    SetDefaultCustomization: function ()
+    {
+        var options = {};
+
+        options.bgsub   = "#b96000";
+        options.bgloy   = "#bf0000";
+        options.bgreb   = "#000";
+        options.bgdroid = "#006400";
+        options.bgboots = "#008080";
+        options.bgmltpl = "#800080";
+
+        for (var key in options)
+        {
+            document.documentElement.style.setProperty("--" + key, options[key]);
+        }
+
+        localStorage.setItem(PRESETUP.STORAGE_KEY_CUSTOMIZATION, JSON.stringify(options));
+    },
 
     SetupPrevious: function()
     {
@@ -92,7 +129,25 @@ var PRESETUP =
 	{
         $("#resetyes").on("click", function () { REBELLION.CloseAllMenus(); REBELLION.ResetMapConfirmed(); });
         $("#resetno").on("click", function () { REBELLION.CloseAllMenus(); });
-	}
+	},
+
+    SetupCustomization: function()
+    {
+        $("#customizemenu input[type=color]").on("change", function(e)
+        {
+            // update the according css variable to the new color
+            document.documentElement.style.setProperty("--" + e.target.id, e.target.value);
+
+            // save the new color to local storage
+            var options = localStorage.getItem(PRESETUP.STORAGE_KEY_CUSTOMIZATION);
+            if (options !== null)
+            {
+                var xoptions = JSON.parse(options);
+                xoptions[e.target.id] = e.target.value;
+                localStorage.setItem(PRESETUP.STORAGE_KEY_CUSTOMIZATION, JSON.stringify(xoptions));
+            }
+        });
+    }
 };
 
 var REBELLION =
@@ -153,15 +208,16 @@ var REBELLION =
         $("#buildqueue").css("opacity", 1).on("click", function () { _this.SetBQ(); _this.OpenMenu($("#bqmenu")); });
         $("#options").css("opacity", 1).on("click", function () { _this.OpenMenu($("#optionsmenu")); });
         $("#about").css("opacity", 1).on("click", function () { _this.OpenMenu($("#aboutmenu")); });
-        //$("#donate").css("opacity", 1).on("click", function () { _this.OpenMenu($("#donatemenu")); });
         $("#hotkeys").css("opacity", 1).on("click", function () { _this.OpenMenu($("#hotkeysmenu")); });
+        $("#customize").css("opacity", 1).on("click", function () { _this.OpenMenu($("#customizemenu")); });
+        $("#customizereverttodefault").on("click", function() { PRESETUP.SetDefaultCustomization() });
 
         $("#closemainmenu").css("opacity", 1).on("click", function () { _this.CloseMenu($("#mainmenu")); });
         $("#closebqmenu").css("opacity", 1).on("click", function () { _this.CloseMenu($("#bqmenu")); });
         $("#closeaboutmenu").css("opacity", 1).on("click", function () { _this.CloseMenu($("#aboutmenu")); });
-        //$("#closedonatemenu").css("opacity", 1).on("click", function () { _this.CloseMenu($("#donatemenu")); });
         $("#closehotkeysmenu").css("opacity", 1).on("click", function () { _this.CloseMenu($("#hotkeysmenu")); });
         $("#closeoptionsmenu").css("opacity", 1).on("click", function () { _this.CloseMenu($("#optionsmenu")); });
+        $("#closecustomizemenu").css("opacity", 1).on("click", function () { _this.CloseMenu($("#customizemenu")); });
 
         svg.select("#mainmenu").click(function () { _this.OpenMenu($("#mainmenu")); });
         svg.select("#buildqueuebutton").click(function () { _this.SetBQ(); _this.OpenMenu($("#bqmenu")); });
@@ -203,9 +259,9 @@ var REBELLION =
                 case 65: // a
                     _this.OpenMenu($("#aboutmenu"));
                     break;
-                //case 68: // d
-                //    _this.OpenMenu($("#donatemenu"));
-                //    break;
+                case 67: // c
+                    _this.OpenMenu($("#customizemenu"));
+                    break;
                 case 72: // h
                     _this.OpenMenu($("#hotkeysmenu"));
                     break;
@@ -490,10 +546,10 @@ var REBELLION =
         _this.CloseMenu($("#mainmenu"));
         _this.CloseMenu($("#bqmenu"));
         _this.CloseMenu($("#aboutmenu"));
-        //_this.CloseMenu($("#donatemenu"));
         _this.CloseMenu($("#hotkeysmenu"));
         _this.CloseMenu($("#confirmreset"));
         _this.CloseMenu($("#optionsmenu"));
+        _this.CloseMenu($("#customizemenu"));
     },
 
     FlipBoard: function ()

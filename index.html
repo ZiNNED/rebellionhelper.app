@@ -9,8 +9,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#000" />
   <link rel="manifest" href="manifest.json">
-  <link href="content/images/favicon.png" rel="shortcut icon" type="image/x-icon">
-  <link href="content/images/favicon_big.png" rel="apple-touch-icon">
+  <link href="content/images/favicon512.png" rel="shortcut icon" type="image/x-icon">
+  <link href="content/images/favicon512.png" rel="apple-touch-icon">
   <link rel="stylesheet" href="content/css/main.min.css">
   <link rel="stylesheet" href="content/css/lightsaber.min.css">
   <link rel="stylesheet" href="content/css/svg.css">
@@ -44,9 +44,9 @@
         <div class="menu">
           <div id="buildqueue" class="button buildqueue" style="opacity: 1;">Build Queue</div>
           <div id="options" class="button about" style="opacity: 1;">Options</div>
+          <div id="customize" class="button customize" style="opacity: 1;">Customize</div>
           <div id="resetmap" class="button resetmap" style="opacity: 1;">Reset Map</div>
           <div id="about" class="button about" style="opacity: 1;">About</div>
-          <!--<div id="donate" class="button donate no-margin" style="opacity: 1;">Donate</div>-->
           <hr />
           <div id="closemainmenu" class="button close no-margin" style="opacity: 1;">Close</div>
         </div>
@@ -437,29 +437,44 @@
         </div>
       </div>
     </div>
-    <!--<div id="donatemenu" class="mask" style="opacity: 0; visibility: hidden;">
+    <div id="customizemenu" class="mask" style="opacity: 0; visibility: hidden;">
       <div class="w-clearfix">
         <div class="menu">
           <div class="info">
-            If you enjoy this app and would like to help keeping it up, please consider donating!
-          </div>
-          <div class="info">
-            Donations can be made in several ways. The easiest is via the Ko-fi button or directly via <a
-              href="https://ko-fi.com/zinned" target="_blank">https://ko-fi.com/zinned</a>.
-          </div>
-          <div class="info">
-            Alternatively, you can make anonymous donations using cryptocurrency to the following addresses:<br /><br />
-            Bitcoin:<br /><span class="select-true">1CmFaBEjkjA4CxCQJusvS8FK29qY7USgeh</span><br /><br />
-            Ethereum:<br /><span class="select-true">0x2715da2A97c4045D2fAf855702d2F26d9079Ee50</span>
-          </div>
-          <div class="info">
-            Many thanks for supporting me!
+            Here you can customize the different color schemes used for the different states of systems.
           </div>
           <hr />
-          <div id="closedonatemenu" class="button close no-margin" style="opacity: 1;">Close</div>
+          <div>
+            <input type="color" id="bgsub" value="#b96000">
+            <label for="bgsub" class="colorpicker bq-impsub">Subjugated to Empire</label>
+          </div>  
+          <div>
+            <input type="color" id="bgloy" value="#bf0000">
+            <label for="bgloy" class="colorpicker bq-imploy">Loyal to Empire</label>
+          </div>
+          <div>
+            <input type="color" id="bgreb" value="#000">
+            <label for="bgreb" class="colorpicker bq-rebel">Loyal to Rebels</label>
+          </div>
+          <div>
+            <input type="color" id="bgdroid" value="#006400">
+            <label for="bgdroid" class="colorpicker bq-droid">Probe Droid</label>
+          </div>
+          <div>
+            <input type="color" id="bgboots" value="#008080">
+            <label for="bgboots" class="colorpicker bq-boots">Boots on the Ground</label>
+          </div>
+          <div>
+            <input type="color" id="bgmltpl" name="bq-multi" value="#800080">
+            <label for="bgmltpl" class="colorpicker bq-multi">Multistatus</label>
+          </div>
+          <hr />
+          <div id="customizereverttodefault" class="button no-margin no-first-letter" style="opacity: 1;">Revert to default</div>
+          <hr />
+          <div id="closecustomizemenu" class="button close no-margin" style="opacity: 1;">Close</div>
         </div>
       </div>
-    </div>-->
+    </div>
     <div id="hotkeysmenu" class="mask" style="opacity: 0; visibility: hidden;">
       <div class="w-clearfix">
         <div class="menu">
@@ -474,7 +489,7 @@
               <li>Build Queue Menu</li>
               <li>Options Menu</li>
               <li>About Menu</li>
-              <!--<li>Donations Menu</li>-->
+              <li>Customize Menu</li>
               <li>Hotkey Menu</li>
               <li>
                 <hr />
@@ -6501,9 +6516,6 @@
       <div class="left-right"></div>
     </div>
   </div>
-  <!--<footer>
-    powered by <a href="https://www.dss-solutions.nl" target="_blank">dss solutions</a>
-  </footer>-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"></script>
   <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
@@ -6511,8 +6523,7 @@
   <script src="content/js/rebellion.min.js"></script>
   <script>
     if ("serviceWorker" in navigator) {
-      navigator.serviceWorker
-        .register("serviceworker.js");
+      navigator.serviceWorker.register("serviceworker.js");
     }
   </script>
 </body>

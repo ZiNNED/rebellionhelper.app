@@ -1,11 +1,20 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Fira+Sans&display=swap');
 @import "colors.less";
 
+:root
+{
+	--bgsub: #b96000;
+	--bgloy: #bf0000;
+	--bgreb: #000;
+	--bgdroid: #006400;
+	--bgboots: #008080;
+	--bgmltpl: #800080;
+}
+
 /* zero the margins */
 body
 {
 	margin: 0;
-	// background-color: #020612;
 	background-image: -webkit-radial-gradient(circle farthest-corner at 50% 100%, rgba(187, 82, 0, .5), rgba(0, 46, 143, .5)), url("/content/images/hyades.jpg");
 	background-image: radial-gradient(circle farthest-corner at 50% 100%, rgba(187, 82, 0, .5), rgba(0, 46, 143, .5)), url("/content/images/hyades.jpg");
 	background-position: 0px 0px, 50% 50%;
@@ -683,7 +692,7 @@ svg:not(:root)
 #optionsmenu,
 #continue,
 #confirmreset,
-#donatemenu 
+#customizemenu 
 {
 	color: @white;
 
@@ -730,6 +739,57 @@ svg:not(:root)
 		img
 		{
 			width: 25%;
+		}
+	}
+}
+
+#customizemenu
+{
+	input[type=color]
+	{
+		width: 100%;
+	}
+
+	.menu
+	{
+		> div
+		{
+			position: relative;
+
+			.colorpicker
+			{
+				position: absolute;
+				top: 0;
+				width: 100%;
+				text-align: center;
+				display: block;
+				cursor: pointer;
+
+				&.bq-impsub
+				{
+					background-color: var(--bgsub);
+				}
+				&.bq-imploy
+				{
+					background-color: var(--bgloy);
+				}
+				&.bq-rebel
+				{
+					background-color: var(--bgreb);
+				}
+				&.bq-droid
+				{
+					background-color: var(--bgdroid);
+				}
+				&.bq-boots
+				{
+					background-color: var(--bgboots);
+				}
+				&.bq-multi
+				{
+					background-color: var(--bgmltpl);
+				}
+			}
 		}
 	}
 }
@@ -898,7 +958,7 @@ hr
 				{
 					.background
 					{
-						fill: @bgdroid;
+						fill: var(--bgdroid);
 						opacity: .6;
 					}
 
@@ -915,7 +975,7 @@ hr
 				{
 					.background
 					{
-						fill: @bqboots;
+						fill: var(--bgboots);
 						opacity: .6;
 					}
 
@@ -932,7 +992,7 @@ hr
 				{
 					.background
 					{
-						fill: @bgsub;
+						fill: var(--bgsub);
 						opacity: .6;
 					}
 
@@ -949,7 +1009,7 @@ hr
 				{
 					.background
 					{
-						fill: @bgloy;
+						fill: var(--bgloy);
 						opacity: .6;
 					}
 
@@ -966,7 +1026,7 @@ hr
 					{
 						.background
 						{
-							fill: @bqmltpl;
+							fill: var(--bgmltpl);
 							opacity: .6;
 						}
 
@@ -990,7 +1050,7 @@ hr
 				{
 					.background
 					{
-						fill: @bgsub;
+						fill: var(--bgsub);
 						opacity: .6;
 					}
 
@@ -1007,7 +1067,7 @@ hr
 				{
 					.background
 					{
-						fill: @bgloy;
+						fill: var(--bgloy);
 						opacity: .6;
 					}
 
@@ -1024,7 +1084,7 @@ hr
 				{
 					.background
 					{
-						fill: @bgreb;
+						fill: var(--bgreb);
 						opacity: .6;
 					}
 
@@ -1118,7 +1178,7 @@ hr
 						{
 							.background
 							{
-								fill: @bqmltpl;
+								fill: var(--bgmltpl);
 								opacity: .6;
 							}
 
@@ -1228,7 +1288,8 @@ hr
 			}
 		}
 
-		&.about
+		&.about,
+		&#customizereverttodefault
 		{
 			&:hover
 			{
@@ -1236,7 +1297,7 @@ hr
 			}
 		}
 
-		&.donate
+		&.customize
 		{
 			&:hover
 			{

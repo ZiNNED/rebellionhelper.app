@@ -1,9 +1,11 @@
-@font-face {
-  font-family: 'Fira Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/firasans/v16/va9E4kDNxMZdWfMOD5Vvl4jO.ttf) format('truetype');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans&display=swap');
+:root {
+  --bgsub: #b96000;
+  --bgloy: #bf0000;
+  --bgreb: #000;
+  --bgdroid: #006400;
+  --bgboots: #008080;
+  --bgmltpl: #800080;
 }
 /* zero the margins */
 body {
@@ -128,7 +130,7 @@ body footer a {
 }
 .svg {
   display: block;
-  width: calc(100vh/0.5625);
+  width: calc(177.77777778vh);
   max-height: 100vh;
   max-width: 100vw;
   -webkit-box-flex: 1;
@@ -309,7 +311,7 @@ svg:not(:root) {
   background-color: #bf0000;
 }
 #bq-all #bq-factions .tab {
-  padding-top: 0.5em;
+  padding-top: .5em;
 }
 #bq-all #bq-factions .tab.active {
   display: flex;
@@ -334,16 +336,16 @@ svg:not(:root) {
   }
 }
 #bq-all #bq-factions .tab .queue[data-q="2"] {
-  margin: 0.25em 0 0.25em 0;
-  padding: 0.25em 0 0.25em 0;
+  margin: .25em 0 .25em 0;
+  padding: .25em 0 .25em 0;
   height: calc(100px + .5em);
   border-top: 1px dashed #ddd;
   border-bottom: 1px dashed #ddd;
 }
 @media screen and (max-height: 719px) {
   #bq-all #bq-factions .tab .queue[data-q="2"] {
-    margin: 0 0.25em 0 0.25em;
-    padding: 0 0.25em 0 0.25em;
+    margin: 0 .25em 0 .25em;
+    padding: 0 .25em 0 .25em;
     height: auto;
     border-left: 1px dashed #ddd;
     border-right: 1px dashed #ddd;
@@ -354,7 +356,7 @@ svg:not(:root) {
 #bq-all #bq-factions .tab .queue:before {
   content: attr(data-q);
   font-size: 5em;
-  opacity: 0.25;
+  opacity: .25;
   position: absolute;
   height: 100px;
   line-height: 100px;
@@ -432,7 +434,7 @@ svg:not(:root) {
     margin: 0 !important;
   }
   #bq-factions #rebels .queue > div .count {
-    margin-right: 0.5em;
+    margin-right: .5em;
   }
   #bq-factions #rebels:before {
     content: url("/content/images/rebels.svg");
@@ -444,13 +446,13 @@ svg:not(:root) {
     padding-left: 2em;
   }
   #bq-factions #empire .queue[data-q="2"] {
-    padding: 0.25em 0 0.25em 2em !important;
+    padding: .25em 0 .25em 2em !important;
   }
   #bq-factions #empire .queue > div {
     margin-left: 1em !important;
   }
   #bq-factions #empire .queue > div .count {
-    margin-left: 0.5em;
+    margin-left: .5em;
   }
   #bq-factions #empire .queue:before {
     left: calc(50% - 31px);
@@ -502,7 +504,7 @@ svg:not(:root) {
 #optionsmenu,
 #continue,
 #confirmreset,
-#donatemenu {
+#customizemenu {
   color: #fff;
 }
 #aboutmenu .info,
@@ -510,7 +512,7 @@ svg:not(:root) {
 #optionsmenu .info,
 #continue .info,
 #confirmreset .info,
-#donatemenu .info {
+#customizemenu .info {
   font-size: 16.8px;
   max-width: 400px;
   text-align: justify;
@@ -521,7 +523,7 @@ svg:not(:root) {
 #optionsmenu .info *,
 #continue .info *,
 #confirmreset .info *,
-#donatemenu .info * {
+#customizemenu .info * {
   font-size: 16.8px;
 }
 #aboutmenu .info ul,
@@ -529,7 +531,7 @@ svg:not(:root) {
 #optionsmenu .info ul,
 #continue .info ul,
 #confirmreset .info ul,
-#donatemenu .info ul {
+#customizemenu .info ul {
   list-style: none;
   padding: 0;
 }
@@ -538,7 +540,7 @@ svg:not(:root) {
 #optionsmenu .info ul li:not(.no-first-letter):first-letter,
 #continue .info ul li:not(.no-first-letter):first-letter,
 #confirmreset .info ul li:not(.no-first-letter):first-letter,
-#donatemenu .info ul li:not(.no-first-letter):first-letter {
+#customizemenu .info ul li:not(.no-first-letter):first-letter {
   color: #fc6;
 }
 #aboutmenu .info a,
@@ -546,7 +548,7 @@ svg:not(:root) {
 #optionsmenu .info a,
 #continue .info a,
 #confirmreset .info a,
-#donatemenu .info a {
+#customizemenu .info a {
   color: #fc6;
 }
 #aboutmenu .info a:visited,
@@ -554,7 +556,7 @@ svg:not(:root) {
 #optionsmenu .info a:visited,
 #continue .info a:visited,
 #confirmreset .info a:visited,
-#donatemenu .info a:visited {
+#customizemenu .info a:visited {
   color: #fc6;
 }
 #aboutmenu .info img,
@@ -562,8 +564,40 @@ svg:not(:root) {
 #optionsmenu .info img,
 #continue .info img,
 #confirmreset .info img,
-#donatemenu .info img {
+#customizemenu .info img {
   width: 25%;
+}
+#customizemenu input[type=color] {
+  width: 100%;
+}
+#customizemenu .menu > div {
+  position: relative;
+}
+#customizemenu .menu > div .colorpicker {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+}
+#customizemenu .menu > div .colorpicker.bq-impsub {
+  background-color: var(--bgsub);
+}
+#customizemenu .menu > div .colorpicker.bq-imploy {
+  background-color: var(--bgloy);
+}
+#customizemenu .menu > div .colorpicker.bq-rebel {
+  background-color: var(--bgreb);
+}
+#customizemenu .menu > div .colorpicker.bq-droid {
+  background-color: var(--bgdroid);
+}
+#customizemenu .menu > div .colorpicker.bq-boots {
+  background-color: var(--bgboots);
+}
+#customizemenu .menu > div .colorpicker.bq-multi {
+  background-color: var(--bgmltpl);
 }
 .highlight {
   color: #fc6;
@@ -604,13 +638,13 @@ svg:not(:root) {
 #rebelbase {
   stroke: #b8ccc7;
   stroke-width: 8;
-  fill-opacity: 0.75;
+  fill-opacity: .75;
   fill: #000;
 }
 hr {
   width: 100%;
   border-top: 2px solid #fc6;
-  margin: 0.5em 0 0.5em 0;
+  margin: .5em 0 .5em 0;
 }
 #bmac {
   position: absolute;
@@ -623,17 +657,17 @@ hr {
 }
 .space .mainbutton.active .cls-9 {
   fill: #b96000;
-  opacity: 0.6;
+  opacity: .6;
 }
 .space .mainbutton.active .cls-56 {
-  opacity: 0.2;
+  opacity: .2;
 }
 .space .mainbutton#droidbutton.active .cls-9 {
   fill: #006400;
-  opacity: 0.6;
+  opacity: .6;
 }
 .space .mainbutton#droidbutton.active .cls-56 {
-  opacity: 0.2;
+  opacity: .2;
 }
 .space #Buttons .system .subjugated,
 .space #Buttons .system .imperial,
@@ -652,59 +686,59 @@ hr {
   opacity: 1;
 }
 .space.droid #Buttons .system.bq-droid .background {
-  fill: #006400;
-  opacity: 0.6;
+  fill: var(--bgdroid);
+  opacity: .6;
 }
 .space.droid #Buttons .system.bq-droid .droid:not(.flipped) {
   opacity: 1;
 }
 .space.droid #Buttons .system.bq-boots .background {
-  fill: #008080;
-  opacity: 0.6;
+  fill: var(--bgboots);
+  opacity: .6;
 }
 .space.droid #Buttons .system.bq-boots .boots:not(.flipped) {
   opacity: 1;
 }
 .space.droid #Buttons .system.bq-impsub .background {
-  fill: #b96000;
-  opacity: 0.6;
+  fill: var(--bgsub);
+  opacity: .6;
 }
 .space.droid #Buttons .system.bq-impsub .subjugated:not(.flipped) {
   opacity: 1;
 }
 .space.droid #Buttons .system.bq-imploy .background {
-  fill: #bf0000;
-  opacity: 0.6;
+  fill: var(--bgloy);
+  opacity: .6;
 }
 .space.droid #Buttons .system.bq-imploy .imperial {
   opacity: 1;
 }
 .space.droid #Buttons .system.bq-droid.bq-imploy .background,
 .space.droid #Buttons .system.bq-droid.bq-impsub .background {
-  fill: #800080;
-  opacity: 0.6;
+  fill: var(--bgmltpl);
+  opacity: .6;
 }
 .space.droid #Buttons .system.bq-droid.bq-imploy .droid,
 .space.droid #Buttons .system.bq-droid.bq-impsub .droid {
   opacity: 0;
 }
 .space:not(.droid) #Buttons .system.bq-impsub .background {
-  fill: #b96000;
-  opacity: 0.6;
+  fill: var(--bgsub);
+  opacity: .6;
 }
 .space:not(.droid) #Buttons .system.bq-impsub .subjugated:not(.flipped) {
   opacity: 1;
 }
 .space:not(.droid) #Buttons .system.bq-imploy .background {
-  fill: #bf0000;
-  opacity: 0.6;
+  fill: var(--bgloy);
+  opacity: .6;
 }
 .space:not(.droid) #Buttons .system.bq-imploy .imperial:not(.flipped) {
   opacity: 1;
 }
 .space:not(.droid) #Buttons .system.bq-rebel .background {
-  fill: #000;
-  opacity: 0.6;
+  fill: var(--bgreb);
+  opacity: .6;
 }
 .space:not(.droid) #Buttons .system.bq-rebel .rebel:not(.flipped) {
   opacity: 1;
@@ -738,8 +772,8 @@ hr {
 }
 .flip .space.droid #Buttons .system.bq-droid.bq-imploy .background,
 .flip .space.droid #Buttons .system.bq-droid.bq-impsub .background {
-  fill: #800080;
-  opacity: 0.6;
+  fill: var(--bgmltpl);
+  opacity: .6;
 }
 .flip .space.droid #Buttons .system.bq-droid.bq-imploy .droid,
 .flip .space.droid #Buttons .system.bq-droid.bq-impsub .droid {
@@ -783,10 +817,11 @@ hr {
   .button.buildqueue:hover {
     background-color: rgba(185, 96, 0, 0.6);
   }
-  .button.about:hover {
+  .button.about:hover,
+  .button#customizereverttodefault:hover {
     background-color: rgba(30, 144, 255, 0.6);
   }
-  .button.donate:hover {
+  .button.customize:hover {
     background-color: goldenrod;
   }
   .button.close:hover {
@@ -806,28 +841,28 @@ hr {
   #show-rebels-bq:hover,
   #show-empire-bq:hover,
   #show-buildqueue:hover {
-    opacity: 0.5;
+    opacity: .5;
   }
   .space .mainbutton:not(.active):hover .cls-9 {
     fill: #b96000;
-    opacity: 0.6;
+    opacity: .6;
   }
   .space .mainbutton:not(.active):hover .cls-56 {
-    opacity: 0.2;
+    opacity: .2;
   }
   .space .mainbutton#droidbutton:not(.active):hover .cls-9 {
     fill: #006400;
-    opacity: 0.6;
+    opacity: .6;
   }
   .space .mainbutton#droidbutton:not(.active):hover .cls-56 {
-    opacity: 0.2;
+    opacity: .2;
   }
   .space.droid #Buttons .system:not(.bq-droid, .bq-boots, .bq-impsub, .bq-imploy):hover .background {
     fill: #e6e6e6;
-    opacity: 0.25;
+    opacity: .25;
   }
   .space:not(.droid) #Buttons .system:not(.bq-impsub, .bq-imploy, .bq-rebel, .bq-disallowed, .remote):hover .background {
     fill: #e6e6e6;
-    opacity: 0.25;
+    opacity: .25;
   }
 }

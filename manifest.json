@@ -1,21 +1,51 @@
 {
-  "short_name": "RebellionH",
   "name": "Rebellion Helper",
+  "short_name": "RebellionHelper",
   "description": "Toggle each system between Imperial Subjugation, Imperial Loyalty and Rebel Loyalty. Show the current build queue for both players. Toggle Probe Tracking View to track all send probes!",
   "icons": [
     {
-      "src": "content/images/favicon_big.png",
+      "src": "content/images/favicon512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    },
+    {
+      "src": "content/images/favicon512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any"
+    },
+    {
+      "src": "content/images/favicon256.png",
       "type": "image/png",
       "sizes": "256x256"
     },
     {
-      "src": "content/images/favicon.png",
+      "src": "content/images/favicon128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "content/images/favicon64.png",
+      "type": "image/png",
+      "sizes": "64x64"
+    },
+    {
+      "src": "content/images/favicon32.png",
       "type": "image/png",
       "sizes": "32x32"
     }
   ],
-  "background_color": "#020612",
-  "theme_color": "#000",
+  "start_url": "https://rebellionhelper.app",
   "display": "standalone",
-  "orientation": "landscape"
+  "background_color": "#000000",
+  "theme_color": "#f40000",
+  "dir": "ltr",
+  "scope": "https://rebellionhelper.app",
+  "lang": "en",
+  "orientation": "landscape",
+  "prefer_related_applications": false,
+  "categories": [
+    "games"
+  ]
 }
