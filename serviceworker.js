@@ -29,18 +29,17 @@ self.addEventListener('install', (e) => {
     const cache = await caches.open(cacheName);
     console.log('[Service Worker] Caching all: app shell and content');
     await cache.addAll(appShellFiles);
+    await self.skipWaiting();
   })());
-  self.skipWaiting();
 });
 
 // Clean up old caches
 self.addEventListener('activate', (e) => {
-  e.waitUntil(
-    caches.keys().then((keys) =>
-      Promise.all(keys.filter((k) => k !== cacheName).map((k) => caches.delete(k)))
-    )
-  );
-  self.clients.claim();
+  e.waitUntil((async () => {
+    const keys = await caches.keys();
+    await Promise.all(keys.filter((k) => k !== cacheName).map((k) => caches.delete(k)));
+    await self.clients.claim();
+  })());
 });
 
 // Fetching content using Service Worker
