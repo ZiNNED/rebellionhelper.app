@@ -3,7 +3,7 @@ const cacheName = 'swrh-v1.14';
 const appShellFiles = [
   '/',
   '/index.html',
-  '/content/css/lightsaber.min.css',
+  '/content/css/lightsaber.css',
   '/content/css/main.css',
   '/content/css/svg.css',
   '/content/images/build.svg',
