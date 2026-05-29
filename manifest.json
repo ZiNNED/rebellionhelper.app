@@ -1,7 +1,7 @@
 {
   "name": "Rebellion Helper",
   "short_name": "RebellionHelper",
-  "description": "Toggle each system between Imperial Subjugation, Imperial Loyalty and Rebel Loyalty. Show the current build queue for both players. Toggle Probe Tracking View to track all send probes!",
+  "description": "Toggle each system between Imperial Subjugation, Imperial Loyalty and Rebel Loyalty. Show the current build queue for both players. Toggle Probe Tracking View to track all sent probes!",
   "icons": [
     {
       "src": "content/images/favicon512.png",
