@@ -1,14 +1,15 @@
 // Files to cache
-const cacheName = 'swrh-v1.11';
+const cacheName = 'swrh-v1.14';
 const appShellFiles = [
   '/',
   '/index.html',
   '/content/css/lightsaber.min.css',
-  '/content/css/main.min.css',
+  '/content/css/main.css',
   '/content/css/svg.css',
   '/content/images/build.svg',
   '/content/images/empire.svg',
   '/content/images/rebels.svg',
+  '/content/images/btc-qr.svg',
   '/content/images/hyades.jpg',
   '/content/images/favicon32.png',
   '/content/images/favicon64.png',
@@ -16,7 +17,7 @@ const appShellFiles = [
   '/content/images/favicon256.png',
   '/content/images/favicon512.png',
   '/content/js/modernizr.min.js',
-  '/content/js/rebellion.min.js',
+  '/content/js/rebellion.js',
   '/content/misc/lightsaber-off.mp3',
   '/content/misc/lightsaber-on.mp3'
 ];
@@ -29,6 +30,17 @@ self.addEventListener('install', (e) => {
     console.log('[Service Worker] Caching all: app shell and content');
     await cache.addAll(appShellFiles);
   })());
+  self.skipWaiting();
+});
+
+// Clean up old caches
+self.addEventListener('activate', (e) => {
+  e.waitUntil(
+    caches.keys().then((keys) =>
+      Promise.all(keys.filter((k) => k !== cacheName).map((k) => caches.delete(k)))
+    )
+  );
+  self.clients.claim();
 });
 
 // Fetching content using Service Worker

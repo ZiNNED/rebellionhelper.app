@@ -33,7 +33,7 @@ var PRESETUP =
     {
         var _this = this;
 
-        _this.SetupKofi();
+        // _this.SetupKofi();
         _this.LoadOptions();
         _this.LoadCustomization();
         _this.SetupCustomization();
@@ -41,18 +41,18 @@ var PRESETUP =
         _this.SetupPrevious();
     },
 
-    SetupKofi: function()
-    {
-        if (!OPTIONS.IsMobile())
-        {
-            kofiWidgetOverlay.draw('zinned', {
-                'type': 'floating-chat',
-                'floating-chat.donateButton.text': 'Support me',
-                'floating-chat.donateButton.background-color': '#fcbf47',
-                'floating-chat.donateButton.text-color': '#323842'
-              });
-        }
-    },
+    // SetupKofi: function()
+    // {
+    //     if (!OPTIONS.IsMobile())
+    //     {
+    //         kofiWidgetOverlay.draw('zinned', {
+    //             'type': 'floating-chat',
+    //             'floating-chat.donateButton.text': 'Support me',
+    //             'floating-chat.donateButton.background-color': '#fcbf47',
+    //             'floating-chat.donateButton.text-color': '#323842'
+    //           });
+    //     }
+    // },
 
     LoadOptions: function ()
     {
@@ -208,6 +208,7 @@ var REBELLION =
         $("#buildqueue").css("opacity", 1).on("click", function () { _this.SetBQ(); _this.OpenMenu($("#bqmenu")); });
         $("#options").css("opacity", 1).on("click", function () { _this.OpenMenu($("#optionsmenu")); });
         $("#about").css("opacity", 1).on("click", function () { _this.OpenMenu($("#aboutmenu")); });
+        $("#donate").css("opacity", 1).on("click", function () { _this.OpenMenu($("#donatemenu")); });
         $("#hotkeys").css("opacity", 1).on("click", function () { _this.OpenMenu($("#hotkeysmenu")); });
         $("#customize").css("opacity", 1).on("click", function () { _this.OpenMenu($("#customizemenu")); });
         $("#customizereverttodefault").on("click", function() { PRESETUP.SetDefaultCustomization() });
@@ -218,6 +219,7 @@ var REBELLION =
         $("#closehotkeysmenu").css("opacity", 1).on("click", function () { _this.CloseMenu($("#hotkeysmenu")); });
         $("#closeoptionsmenu").css("opacity", 1).on("click", function () { _this.CloseMenu($("#optionsmenu")); });
         $("#closecustomizemenu").css("opacity", 1).on("click", function () { _this.CloseMenu($("#customizemenu")); });
+        $("#closedonatemenu").css("opacity", 1).on("click", function () { _this.CloseMenu($("#donatemenu")); });
 
         svg.select("#mainmenu").click(function () { _this.OpenMenu($("#mainmenu")); });
         svg.select("#buildqueuebutton").click(function () { _this.SetBQ(); _this.OpenMenu($("#bqmenu")); });
@@ -550,6 +552,7 @@ var REBELLION =
         _this.CloseMenu($("#confirmreset"));
         _this.CloseMenu($("#optionsmenu"));
         _this.CloseMenu($("#customizemenu"));
+        _this.CloseMenu($("#donatemenu"));
     },
 
     FlipBoard: function ()

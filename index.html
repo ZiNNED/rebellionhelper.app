@@ -11,7 +11,7 @@
   <link rel="manifest" href="manifest.json">
   <link href="content/images/favicon512.png" rel="shortcut icon" type="image/x-icon">
   <link href="content/images/favicon512.png" rel="apple-touch-icon">
-  <link rel="stylesheet" href="content/css/main.min.css">
+  <link rel="stylesheet" href="content/css/main.css">
   <link rel="stylesheet" href="content/css/lightsaber.min.css">
   <link rel="stylesheet" href="content/css/svg.css">
 </head>
@@ -48,7 +48,28 @@
           <div id="resetmap" class="button resetmap" style="opacity: 1;">Reset Map</div>
           <div id="about" class="button about" style="opacity: 1;">About</div>
           <hr />
+          <div id="donate" class="button donate no-margin" style="opacity: 1;">Donate!</div>
+          <hr />
           <div id="closemainmenu" class="button close no-margin" style="opacity: 1;">Close</div>
+        </div>
+      </div>
+    </div>
+    <div id="donatemenu" class="mask" style="opacity: 0; visibility: hidden;">
+      <div class="w-clearfix">
+        <div class="menu">
+          <div class="info">
+            If you like this tool and want to support its development, you can donate via Bitcoin. Thank you!
+          </div>
+          <div class="info" style="text-align: center;">
+            <a href="bitcoin:bc1qfymdph0p033tfk66wge5ny7fdlpt8czgh7sh46">
+              <img src="content/images/btc-qr.svg" alt="Bitcoin QR Code" style="width: 200px; height: 200px; margin: 10px auto;" />
+            </a>
+          </div>
+          <div class="info select-true" style="word-break: break-all; text-align: center; font-size: 12px; font-family: monospace;">
+            bc1qfymdph0p033tfk66wge5ny7fdlpt8czgh7sh46
+          </div>
+          <hr />
+          <div id="closedonatemenu" class="button close no-margin" style="opacity: 1;">Close</div>
         </div>
       </div>
     </div>
@@ -6518,9 +6539,8 @@
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"></script>
-  <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
   <script src="content/js/modernizr.min.js"></script>
-  <script src="content/js/rebellion.min.js"></script>
+  <script src="content/js/rebellion.js"></script>
   <script>
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker.register("serviceworker.js");
