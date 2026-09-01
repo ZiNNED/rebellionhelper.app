@@ -208,7 +208,6 @@ var REBELLION =
         $("#buildqueue").css("opacity", 1).on("click", function () { _this.SetBQ(); _this.OpenMenu($("#bqmenu")); });
         $("#options").css("opacity", 1).on("click", function () { _this.OpenMenu($("#optionsmenu")); });
         $("#about").css("opacity", 1).on("click", function () { _this.OpenMenu($("#aboutmenu")); });
-        $("#donate").css("opacity", 1).on("click", function () { _this.OpenMenu($("#donatemenu")); });
         $("#hotkeys").css("opacity", 1).on("click", function () { _this.OpenMenu($("#hotkeysmenu")); });
         $("#customize").css("opacity", 1).on("click", function () { _this.OpenMenu($("#customizemenu")); });
         $("#customizereverttodefault").on("click", function() { PRESETUP.SetDefaultCustomization() });
@@ -219,7 +218,6 @@ var REBELLION =
         $("#closehotkeysmenu").css("opacity", 1).on("click", function () { _this.CloseMenu($("#hotkeysmenu")); });
         $("#closeoptionsmenu").css("opacity", 1).on("click", function () { _this.CloseMenu($("#optionsmenu")); });
         $("#closecustomizemenu").css("opacity", 1).on("click", function () { _this.CloseMenu($("#customizemenu")); });
-        $("#closedonatemenu").css("opacity", 1).on("click", function () { _this.CloseMenu($("#donatemenu")); });
 
         svg.select("#mainmenu").click(function () { _this.OpenMenu($("#mainmenu")); });
         svg.select("#buildqueuebutton").click(function () { _this.SetBQ(); _this.OpenMenu($("#bqmenu")); });
@@ -552,7 +550,6 @@ var REBELLION =
         _this.CloseMenu($("#confirmreset"));
         _this.CloseMenu($("#optionsmenu"));
         _this.CloseMenu($("#customizemenu"));
-        _this.CloseMenu($("#donatemenu"));
     },
 
     FlipBoard: function ()

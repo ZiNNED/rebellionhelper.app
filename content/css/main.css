@@ -507,8 +507,7 @@ svg:not(:root) {
 #optionsmenu,
 #continue,
 #confirmreset,
-#customizemenu,
-#donatemenu {
+#customizemenu {
   color: #fff;
 }
 #aboutmenu .info,
@@ -516,8 +515,7 @@ svg:not(:root) {
 #optionsmenu .info,
 #continue .info,
 #confirmreset .info,
-#customizemenu .info,
-#donatemenu .info {
+#customizemenu .info {
   font-size: 16.8px;
   max-width: 400px;
   text-align: justify;
@@ -528,8 +526,7 @@ svg:not(:root) {
 #optionsmenu .info *,
 #continue .info *,
 #confirmreset .info *,
-#customizemenu .info *,
-#donatemenu .info * {
+#customizemenu .info * {
   font-size: 16.8px;
 }
 #aboutmenu .info ul,
@@ -537,8 +534,7 @@ svg:not(:root) {
 #optionsmenu .info ul,
 #continue .info ul,
 #confirmreset .info ul,
-#customizemenu .info ul,
-#donatemenu .info ul {
+#customizemenu .info ul {
   list-style: none;
   padding: 0;
 }
@@ -547,8 +543,7 @@ svg:not(:root) {
 #optionsmenu .info ul li:not(.no-first-letter):first-letter,
 #continue .info ul li:not(.no-first-letter):first-letter,
 #confirmreset .info ul li:not(.no-first-letter):first-letter,
-#customizemenu .info ul li:not(.no-first-letter):first-letter,
-#donatemenu .info ul li:not(.no-first-letter):first-letter {
+#customizemenu .info ul li:not(.no-first-letter):first-letter {
   color: #fc6;
 }
 #aboutmenu .info a,
@@ -556,8 +551,7 @@ svg:not(:root) {
 #optionsmenu .info a,
 #continue .info a,
 #confirmreset .info a,
-#customizemenu .info a,
-#donatemenu .info a {
+#customizemenu .info a {
   color: #fc6;
 }
 #aboutmenu .info a:visited,
@@ -565,8 +559,7 @@ svg:not(:root) {
 #optionsmenu .info a:visited,
 #continue .info a:visited,
 #confirmreset .info a:visited,
-#customizemenu .info a:visited,
-#donatemenu .info a:visited {
+#customizemenu .info a:visited {
   color: #fc6;
 }
 #aboutmenu .info img,
@@ -574,8 +567,7 @@ svg:not(:root) {
 #optionsmenu .info img,
 #continue .info img,
 #confirmreset .info img,
-#customizemenu .info img,
-#donatemenu .info img {
+#customizemenu .info img {
   width: 25%;
 }
 #customizemenu input[type=color] {
@@ -831,9 +823,6 @@ hr {
   .button.about:hover,
   .button#customizereverttodefault:hover {
     background-color: rgba(30, 144, 255, 0.6);
-  }
-  .button.donate:hover {
-    background-color: rgba(247, 147, 26, 0.6);
   }
   .button.customize:hover {
     background-color: goldenrod;

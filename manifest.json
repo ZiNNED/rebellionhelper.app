@@ -36,12 +36,12 @@
       "sizes": "32x32"
     }
   ],
-  "start_url": "https://rebellionhelper.app",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#f40000",
   "dir": "ltr",
-  "scope": "https://rebellionhelper.app",
+  "scope": "/",
   "lang": "en",
   "orientation": "landscape",
   "prefer_related_applications": false,
