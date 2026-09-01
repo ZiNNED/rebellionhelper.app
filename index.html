@@ -4,7 +4,7 @@
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
   <title>Star Wars: RebellionHelper</title>
-  <meta content="Helper map for the popular board game Star Wars: Rebellion. Use this map to toggle each system between Imperial Subjugation, Imperial Loyalty and Rebel Loyalty. Show the current build queue for both players. Toggle Probe Tracking View to track all sent probes!" name="description">
+  <meta content="Helper map for the popular board game Star Wars: Rebellion. Use this map to toggle each system between Imperial Subjugation, Imperial Loyalty and Rebel Loyalty. Show the current build queue for both players. Toggle Probe Droid Tracking View to track all sent probes!" name="description">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#000" />
@@ -14,8 +14,61 @@
   <link rel="stylesheet" href="content/css/main.css">
   <link rel="stylesheet" href="content/css/lightsaber.css">
   <link rel="stylesheet" href="content/css/svg.css">
+  <style>
+    #moved-splash {
+      position: fixed; inset: 0; z-index: 99999;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      background: #000;
+      color: #fff;
+      font-family: "Fira Sans", sans-serif;
+      text-align: center;
+      padding: 24px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease;
+    }
+    #moved-splash.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    #moved-splash h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0 0 12px;
+      color: #ffe81f; /* Star Wars yellow */
+    }
+    #moved-splash p {
+      font-size: 1rem;
+      font-weight: 400;
+      margin: 0 0 24px;
+      max-width: 420px;
+      line-height: 1.5;
+      opacity: 0.8;
+    }
+    #moved-splash .countdown {
+      font-size: 0.85rem;
+      opacity: 0.6;
+      margin-top: 8px;
+    }
+    #moved-splash a {
+      color: #ffe81f;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+  </style>
 </head>
 <body>
+  <div id="moved-splash">
+    <h1>⚡ This App Has Moved</h1>
+    <p>
+      <strong>Rebellion Helper</strong> has moved to a new home as part of the
+      <strong>BoardBuddy</strong> family of board game helper apps.
+    </p>
+    <div>
+      <a href="https://rebellion.boardbuddy.games">rebellion.boardbuddy.games</a>
+    </div>
+    <div class="countdown">Redirecting in <span id="moved-count">5</span> seconds…</div>
+  </div>
   <div id="flippable">
     <div id="continue" class="mask" style="opacity: 0; visibility: hidden;">
       <div class="w-clearfix">
@@ -6525,6 +6578,30 @@
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker.register("serviceworker.js");
     }
+  </script>
+  <script>
+    (function() {
+      var splash = document.getElementById('moved-splash');
+      if (!splash) return;
+      // Only show on the old domain
+      if (window.location.hostname === 'rebellionhelper.app') {
+        var count = 5;
+        var countEl = document.getElementById('moved-count');
+        splash.classList.add('active');
+        var timer = setInterval(function() {
+          count--;
+          if (countEl) countEl.textContent = count;
+          if (count <= 0) {
+            clearInterval(timer);
+            window.location.replace('https://rebellion.boardbuddy.games');
+          }
+        }, 1000);
+      }
+      // On the new domain, remove the splash entirely so it never flashes
+      else {
+        splash.parentNode.removeChild(splash);
+      }
+    })();
   </script>
 </body>
 </html>
