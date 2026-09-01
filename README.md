@@ -2,7 +2,7 @@
 
 An interactive helper map for the popular board game [Star Wars: Rebellion](https://boardgamegeek.com/boardgame/187645/star-wars-rebellion). Track system loyalty, build queues, and probe droids — all from your browser.
 
-🌐 **[rebellionhelper.app](https://rebellionhelper.app)**
+🌐 **[rebellion.boardbuddy.games](https://rebellion.boardbuddy.games)**
 
 ## Features
 
